@@ -1,0 +1,18 @@
+<h2>Book a Reservation</h2>
+<form (ngSubmit)="reserveSlot()">
+  <label for="area">Select Conservation Area:</label>
+  <select [(ngModel)]="selectedArea" name="area">
+    <option *ngFor="let area of conservationAreas" [value]="area">{{ area }}</option>
+  </select>
+
+  <label for="slot">Select Time Slot:</label>
+  <select [(ngModel)]="selectedSlot" name="slot">
+    <option *ngFor="let slot of reservationService.timeSlots; let i = index" 
+            [value]="i" 
+            [disabled]="!reservationService.isSlotAvailable(i)">
+      {{ slot.time }}
+    </option>
+  </select>
+
+  <button type="submit">Reserve</button>
+</form>

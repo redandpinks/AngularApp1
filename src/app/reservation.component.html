@@ -1,0 +1,21 @@
+<form (ngSubmit)="submitReservation()">
+  <label for="name">Name:</label>
+  <input type="text" id="name" [(ngModel)]="order.name" name="name" required>
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" [(ngModel)]="order.address" name="address" required>
+
+  <label for="city">City:</label>
+  <input type="text" id="city" [(ngModel)]="order.city" name="city" required>
+
+  <label for="state">State:</label>
+  <input type="text" id="state" [(ngModel)]="order.state" name="state" required>
+
+  <label for="zip">ZIP Code:</label>
+  <input type="text" id="zip" [(ngModel)]="order.zip" name="zip" required>
+
+  <label for="country">Country:</label>
+  <input type="text" id="country" [(ngModel)]="order.country" name="country" required>
+
+  <button type="submit">Reserve</button>
+</form>
